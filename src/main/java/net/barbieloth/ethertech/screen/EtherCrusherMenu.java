@@ -27,7 +27,7 @@ public class EtherCrusherMenu extends AbstractContainerMenu {
     // Основний конструктор
     public EtherCrusherMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
         super(ModMenuTypes.ETHER_CRUSHER_MENU.get(), pContainerId);
-        checkContainerSize(inv, 2);
+        // checkContainerSize(inv, 2);
         this.blockEntity = ((EtherCrusherBlockEntity) entity);
         this.level = inv.player.level();
         this.data = data;

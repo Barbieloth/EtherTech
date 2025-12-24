@@ -48,13 +48,26 @@ public class EtherCrusherBlockEntity extends BlockEntity implements MenuProvider
     private int progress = 0;
     private int maxProgress = 100;
 
+    // Файл: src/main/java/net/barbieloth/ethertech/block/entity/EtherCrusherBlockEntity.java
     public EtherCrusherBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(ModBlockEntities.ETHER_CRUSHER_BE.get(), pPos, pBlockState);
+        // Ініціалізуємо відразу для стабільної роботи Menu та воронок
+        this.lazyItemHandler = LazyOptional.of(() -> itemHandler);
+
         this.data = new ContainerData() {
             @Override public int get(int i) { return i == 0 ? progress : maxProgress; }
             @Override public void set(int i, int i1) { if (i == 0) progress = i1; }
             @Override public int getCount() { return 2; }
         };
+    }
+
+    private void processItem() {
+        // Видаляємо 1 сирий ефір
+        this.itemHandler.extractItem(0, 1, false);
+        // Вставляємо 1 звичайний ефір у вихідний слот
+        this.itemHandler.insertItem(1, new ItemStack(ModItems.ETHER.get(), 1), false);
+
+        this.setChanged(); // Повідомляємо світ про зміни в інвентарі
     }
 
     @Override
@@ -96,12 +109,7 @@ public class EtherCrusherBlockEntity extends BlockEntity implements MenuProvider
                 (output.isEmpty() || (output.is(ModItems.ETHER.get()) && output.getCount() < output.getMaxStackSize()));
     }
 
-    private void processItem() {
-        // ВИПРАВЛЕНО: забираємо предмет саме з вхідного слота
-        this.itemHandler.extractItem(0, 1, false);
-        // ВИПРАВЛЕНО: додаємо результат у вихідний слот (1)
-        this.itemHandler.insertItem(1, new ItemStack(ModItems.ETHER.get(), 1), false);
-    }
+
 
     // ВАЖЛИВО: Без цього меню не зможе "побачити" предмети всередині
     @Override

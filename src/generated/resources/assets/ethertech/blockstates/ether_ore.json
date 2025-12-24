@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "ethertech:block/ether_ore"
+    }
+  }
+}

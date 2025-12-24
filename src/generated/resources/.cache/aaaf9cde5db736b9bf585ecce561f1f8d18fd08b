@@ -1,0 +1,4 @@
+// 1.20.1	2025-11-19T10:27:43.6249756	Tags for minecraft:block mod id ethertech
+b7483b14c2a3cce42449cef81840b97891a5bafc data/ethertech/tags/blocks/metal_detector_valuables.json
+61ef7766ce87dfdb67d45820867b048143cdd6f0 data/minecraft/tags/blocks/mineable/pickaxe.json
+61ef7766ce87dfdb67d45820867b048143cdd6f0 data/minecraft/tags/blocks/needs_diamond_tool.json

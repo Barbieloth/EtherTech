@@ -1,0 +1,13 @@
+{
+  "item.ethertech.orange": "Orange",
+  "creativetab.ethertech.ethertech_tab": "EtherTech",
+  "tooltip.ethertech.metal_detector.tooltip" : "Finds valuables underground!",
+  "item.ethertech.metal_detector": "Metal detector",
+  "item.ethertech.ether": "Ether",
+  "item.ethertech.ether_wand": "Ether Wand",
+  "block.ethertech.ether_ore": "Ether Ore",
+  "item.ethertech.raw_ether": "Raw Ether",
+  "item.ethertech.vita_egg": "Vita Spawn Egg",
+  "item.ethertech.rhino_egg": "Rhino Spawn Egg",
+  "block.ethertech.station": "Station"
+}

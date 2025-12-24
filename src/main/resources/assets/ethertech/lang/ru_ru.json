@@ -1,0 +1,13 @@
+{
+  "item.ethertech.orange": "Мандарин",
+  "creativetab.ethertech.ethertech_tab": "Эфирные Технологии",
+  "tooltip.ethertech.metal_detector.tooltip" : "Находит цености под землёй!",
+  "item.ethertech.metal_detector": "Металлоискатель",
+  "item.ethertech.ether": "Эфир",
+  "item.ethertech.ether_wand": "Эфирный посох",
+  "block.ethertech.ether_ore": "Эфирная руда",
+  "item.ethertech.raw_ether": "Сырой эфир",
+  "item.ethertech.vita_egg": "Яйцо призыва Виты",
+  "item.ethertech.rhino_egg": "Яйцо призыва Носорога",
+  "block.ethertech.station": "Shelma"
+}

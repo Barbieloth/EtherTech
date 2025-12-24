@@ -2,11 +2,13 @@ package net.barbieloth.ethertech;
 
 import com.mojang.logging.LogUtils;
 import net.barbieloth.ethertech.block.ModBlocks;
+import net.barbieloth.ethertech.block.entity.ModBlockEntities;
 import net.barbieloth.ethertech.entity.ModEntities;
 import net.barbieloth.ethertech.entity.client.RhinoRender;
 import net.barbieloth.ethertech.entity.client.RobotRender;
 import net.barbieloth.ethertech.entity.custom.RhinoEntity;
 import net.barbieloth.ethertech.item.ModItems;
+import net.barbieloth.ethertech.screen.EtherCrusherScreen;
 import net.barbieloth.ethertech.screen.ModMenuTypes;
 import net.barbieloth.ethertech.screen.StationMenuScreend;
 import net.minecraft.client.gui.screens.MenuScreens;
@@ -43,6 +45,7 @@ public class EtherTech
         ModEntities.register(modEventBus);
         REGISTRAR.register(modEventBus);
         ModMenuTypes.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -86,7 +89,7 @@ public class EtherTech
             // Регистрируем рендер для Носорога
             EntityRenderers.register(ModEntities.RHINO.get(), RhinoRender::new);
             EntityRenderers.register(ModEntities.VITA.get(), RobotRender::new);
-
+            MenuScreens.register(ModMenuTypes.ETHER_CRUSHER_MENU.get(), EtherCrusherScreen::new);
             MenuScreens.register(ModMenuTypes.STATION_MENU.get(), StationMenuScreend::new);
         }
     }

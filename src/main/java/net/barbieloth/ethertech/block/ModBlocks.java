@@ -1,5 +1,6 @@
 package net.barbieloth.ethertech.block;
 
+import net.barbieloth.ethertech.block.custom.EtherCrusherBlock;
 import net.barbieloth.ethertech.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -28,6 +29,9 @@ public class ModBlocks {
         registryBlockItem(name, toReturn);
         return toReturn;
     }
+
+    public static final RegistryObject<Block> ETHER_CRUSHER = registerBlock("ether_crusher",
+            () -> new EtherCrusherBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
 
     private static <T extends Block> RegistryObject<Item> registryBlockItem(String name, RegistryObject<T> block) {
         return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));

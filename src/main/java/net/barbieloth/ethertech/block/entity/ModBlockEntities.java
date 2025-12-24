@@ -17,6 +17,10 @@ public class ModBlockEntities {
                     BlockEntityType.Builder.of(StationBlockEntity::new,
                             ModBlocks.STATION.get()).build(null));
 
+    public static final RegistryObject<BlockEntityType<EtherCrusherBlockEntity>> ETHER_CRUSHER_BE =
+            BLOCK_ENTITIES.register("ether_crusher_be", () ->
+                    BlockEntityType.Builder.of(EtherCrusherBlockEntity::new, ModBlocks.ETHER_CRUSHER.get()).build(null));
+
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
 

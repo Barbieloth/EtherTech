@@ -16,10 +16,14 @@ public class ModMenuTypes {
     public static final RegistryObject<MenuType<StationMenu>> STATION_MENU =
             registerMenuType("station_menu", StationMenu::new);
 
+    public static final RegistryObject<MenuType<EtherCrusherMenu>> ETHER_CRUSHER_MENU =
+            registerMenuType("ether_crusher_menu", EtherCrusherMenu::new);
 
     private static <T extends AbstractContainerMenu> RegistryObject<MenuType<T>> registerMenuType(String name, IContainerFactory<T> factory) {
         return MENUS.register(name, () -> IForgeMenuType.create(factory));
     }
+
+
 
     public static void register(IEventBus eventBus) {
         MENUS.register(eventBus);

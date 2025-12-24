@@ -137,4 +137,13 @@ public class EtherCrusherBlockEntity extends BlockEntity implements MenuProvider
         itemHandler.deserializeNBT(pTag.getCompound("inventory"));
         progress = pTag.getInt("progress");
     }
+    @Override
+    public CompoundTag getUpdateTag() {
+        return saveWithoutMetadata();
+    }
+
+    @Override
+    public void handleUpdateTag(CompoundTag tag) {
+        load(tag);
+    }
 }
